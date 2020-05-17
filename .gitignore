@@ -1,0 +1,6 @@
+#venv environment should be ignored
+mp_venv/
+
+#and pyc files
+__pycache__
+

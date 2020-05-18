@@ -3,15 +3,15 @@ from django.db import models
 class Meal(models.Model):
     """Meal to be eaten"""
     text = models.CharField(max_length=200)
-    date_added = models.DateTimeField(auto_now_add=False)
+    date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         """Return a string representation of a model"""
-        return. self.text
+        return self.text
 
-class ingredient(models.Model):
+class Ingredient(models.Model):
     """The ingredients that make up the meal"""
-    meal = models.ForeignKey(Meal)
+    meal = models.ForeignKey(Meal, on_delete=models.CASCADE)
     text = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
 
@@ -21,5 +21,3 @@ class ingredient(models.Model):
     def __str__(self):
         """Return a string representation of the model"""
         return self.text
-
-        
